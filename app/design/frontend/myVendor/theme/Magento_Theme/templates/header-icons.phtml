@@ -1,10 +1,9 @@
 <?php
 /**
- * @var \Magento\Theme\Block\Html\Header $block
+// * @var \Magento\Theme\Block\Html\Header $block
  * @var \Magento\Framework\Escaper $escaper
  */
 ?>
-<!--<div class="icon-links-container>">-->
     <a href="<?= $block->getUrl('catalog/product_compare') ?>" class="icon-link">
         <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/compare.svg') ?>" alt="Compare" class="compare"/>
         <?=$escaper->escapeHtml(__('Compare'))?>
@@ -21,5 +20,4 @@
         <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/cart.svg') ?>" alt="Cart" class="cart"  />
         <?=$escaper->escapeHtml(__('Cart'))?>
     </a>
-<!--</div>-->
 

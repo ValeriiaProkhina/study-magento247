@@ -1,0 +1,18 @@
+<?php
+/* @var \Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Remove $block
+ * @var \Magento\Framework\Escaper $escaper */
+?>
+
+<a href="#"
+   data-post-remove='<?= /* @noEscape */ $block->getItemRemoveParams($block->getItem()) ?>'
+   title="<?= $escaper->escapeHtmlAttr(__('Remove Item')) ?>" class="btn-remove action delete">
+    <img src="<?= $block->getViewFileUrl('Magento_Theme/images/icons/remove.svg') ?>" alt="delete item">
+</a>
+
+<script type="text/x-magento-init">
+    {
+    ".btn-remove": {
+            "Magento_Wishlist/js/open-delete-modal": {}
+        }
+    }
+</script>

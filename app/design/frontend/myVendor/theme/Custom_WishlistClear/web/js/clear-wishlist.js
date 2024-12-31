@@ -20,15 +20,17 @@ define([
                 buttons: [{
                     text: $t('Yes'),
                     class: 'action-confirm',
-                    click: () => {
+                    click: function () {
                         console.log('Confirmed');
                         this._confirmAction();
+                        this.closeModal()
                     }
                 }, {
                     text: $t('No'),
                     class: 'action-cancel',
-                    click: () => {
+                    click: function () {
                         console.log('Canceled');
+                        this.closeModal()
                     }
                 }]
             });

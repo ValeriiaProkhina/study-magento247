@@ -1,14 +1,11 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-/** @var $block \Magento\Framework\View\Element\Html\Links */
+/** @var $block \Magento\Framework\View\Element\Html\Links
+ * @var $escaper \Magento\Framework\Escaper
+ * */
 ?>
 <div class="block account-nav">
     <div class="title">
-        <strong><?= $block->escapeHtml(__('Customer')) ?></strong>
+        <strong><?= $escaper->escapeHtml(__('Customer')) ?></strong>
     </div>
     <div class="content">
         <nav class="account-nav">
