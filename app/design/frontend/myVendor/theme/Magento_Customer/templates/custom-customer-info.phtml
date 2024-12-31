@@ -1,0 +1,15 @@
+<?php
+/** @var \Magento\Customer\Block\Account\Dashboard\Info $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<div class="customer-info">
+    <div class="customer-info__avatar">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme/images/icons/customer.svg'); ?>" alt="Customer Avatar" />
+    </div>
+    <div class="customer-info__details">
+        <p class="customer-name"><?= $block->escapeHtml($block->getName()) ?></p>
+        <p class="customer-email"> <?= $block->escapeHtml($block->getCustomer()->getEmail()) ?></p>
+    </div>
+</div>

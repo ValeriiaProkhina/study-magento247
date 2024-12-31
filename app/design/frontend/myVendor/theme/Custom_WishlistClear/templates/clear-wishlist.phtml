@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var $block \Magento\Wishlist\Block\Customer\Wishlist
+ */
+//$wishlistItems = $block->getWishlistItems();
+?>
+<button type="button" id="clear-wishlist"
+        class="action clear-wishlist">
+    <?= __('Clear All Wishlist') ?>
+</button>
+
+<script type="text/x-magento-init">
+    {
+        "#clear-wishlist": {
+            "Custom_WishlistClear/js/clear-wishlist": {
+                "clearWishlistUrl": "<?= $block->getUrl('wishlist/index/clear') ?>"
+        }
+    }
+}
+</script>
+

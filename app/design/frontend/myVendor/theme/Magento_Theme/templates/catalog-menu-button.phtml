@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+    <button class="catalog-menu__button large-screen"  data-mage-init='{"Magento_Theme/js/catalog-menu-button": {}}' >
+        <img src="<?= $block->getViewFileUrl('Magento_Theme/images/icons/burger-menu-catalog.svg'); ?>" alt="Catalog Menu Button" class="catalog-menu__icon" />
+        <span class="catalog-menu__text"><?= $escaper->escapeHtml(__('Catalog products')); ?></span>
+    </button>
+
+<button class="catalog-menu__button small-screen"  data-action="toggle-nav" >
+    <img src="<?= $block->getViewFileUrl('Magento_Theme/images/icons/burger-menu.svg'); ?>" alt="Menu Button" />
+    <span class="catalog-menu__text"><?= $escaper->escapeHtml(__('Menu')); ?></span>
+</button>
+<!--<span data-action="toggle-nav" class="action nav-toggle"><span>--><?php //= $block->escapeHtml(__('Toggle Nav')) ?><!--</span></span>-->

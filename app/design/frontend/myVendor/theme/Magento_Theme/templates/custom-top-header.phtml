@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<div class="top-header">
+    <nav class="top-navigation">
+        <ul>
+            <li><a href="#"></a><?=$escaper->escapeHtml(__('Delivery and Payment'))?></li>
+            <li><a href="#"></a><?=$escaper->escapeHtml(__('Wholesale customers'))?></li>
+            <li><a href="#"></a><?=$escaper->escapeHtml(__('Contacts'))?></li>
+        </ul>
+    </nav>
+    <div class="currency-language">
+        <div class="currency">
+            <span class="currency__text"><?= $escaper->escapeHtml(__('Exchange rate'))?></span>
+            <span class="currency__dollar">$ 27.95</span>
+            <span class="currency__euro">&euro; 33.50</span>
+        </div>
+        <div class="language-switcher">
+            <a href="?__store=default&___from_store=ua">RU</a> |
+            <a href="?__store=ua&___from_from_store=default">UA</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+
+            <container name="custom.wishlist.wrapper" htmlTag="div" htmlClass="custom-wishlist-wrapper" before="-">
+                <block class="Magento\Theme\Block\Html\Title" name="custom.page.title" template="Magento_Wishlist::page-title.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="clear.wishlist.block" template="Custom_WishlistClear::clear-wishlist.phtml" />
+            </container>
+
+        </referenceContainer>
+
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="customer.wishlist.item.edit" remove="true"/>
+        <referenceBlock name="customer.wishlist.item.comment" remove="true" />
+        <referenceBlock name="customer.wishlist.item.review" remove="true" />
+        <referenceBlock name="customer.wishlist.button.update" remove="true"/>
+        <referenceBlock name="customer.wishlist.item.options" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <move element="customer.wishlist.item.cart" destination="customer.wishlist.items" />
+    </body>
+</page>
