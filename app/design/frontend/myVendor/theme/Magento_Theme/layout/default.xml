@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.wrapper.logo" as="header-wrapper-logo"  label="Header Wrapper Logo" htmlTag="div" htmlClass="header-wrapper-logo">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+                    <arguments>
+                        <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="catalog.menu" htmlTag="div" htmlClass="catalog-menu">
+                <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::catalog-menu-button.phtml" />
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header.panel.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="custom.top.header" template="Magento_Theme::custom-top-header.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+
+            <container name="header.tel" htmlTag="div" htmlClass="header-tel">
+                <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::header-tel.phtml" />
+            </container>
+
+            <container name="header.icons" htmlTag="div" htmlClass="header-icons">
+                <block class="Magento\Framework\View\Element\Template" name="header.icons.block" template="Magento_Theme::header-icons.phtml" />
+            </container>
+
+        </referenceContainer>
+
+
+        <referenceContainer name="header.panel" remove="true" />
+        <referenceContainer name="footer-container" remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true" />
+    </body>
+</page>

@@ -1,0 +1,23 @@
+<?php
+/**
+// * @var \Magento\Theme\Block\Html\Header $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+    <a href="<?= $block->getUrl('catalog/product_compare') ?>" class="icon-link">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/compare.svg') ?>" alt="Compare" class="compare"/>
+        <?=$escaper->escapeHtml(__('Compare'))?>
+    </a>
+    <a href="<?= $block->getUrl('wishlist') ?>" class="icon-link">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/favorites.svg') ?>" alt="Favorites" class="favorites"  />
+        <?=$escaper->escapeHtml(__('Wishlist'))?>
+    </a>
+    <a href="<?= $block->getUrl('customer/account/login') ?>" class="icon-link">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/login.svg') ?>" alt="Login" class="login"  />
+        <?=$escaper->escapeHtml(__('Login'))?>
+    </a>
+    <a href="<?= $block->getUrl('checkout/cart') ?>" class="icon-link">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/cart.svg') ?>" alt="Cart" class="cart"  />
+        <?=$escaper->escapeHtml(__('Cart'))?>
+    </a>
+

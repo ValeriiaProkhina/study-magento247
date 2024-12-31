@@ -1,0 +1,46 @@
+<?php
+?>
+<?php
+/** @var \Magento\Wishlist\Block\Customer\Wishlist\Items $block
+ * @var \Magento\Framework\Escaper $escaper */
+$columns = $block->getColumns();
+?>
+
+<div class="products-grid wishlist">
+    <?php if (count($block->getItems())) : ?>
+        <ol class="product-items">
+            <?php
+            $index = 0;
+            foreach ($block->getItems() as $item) : ?>
+                <li data-row="product-item" class="product-item" id="item_<?= $escaper->escapeHtmlAttr($item->getId()) ?>"  style="<?= $index >= 5 ? 'display: none;' : '' ?>">
+                    <div class="product-item-info" data-container="product-grid">
+                        <?php foreach ($columns as $column) : ?>
+                            <?= $column->setItem($item)->toHtml();?>
+                        <?php endforeach; ?>
+                    </div>
+                </li>
+            <?php
+            $index++;
+            endforeach; ?>
+        </ol>
+    <?php if (count($block->getItems()) > 5) : ?>
+            <div  class="wishlist-pagination__container">
+                <button type="button" class="wishlist-pagination__button" data-mage-init='{"Magento_Wishlist/js/wishlist-pagination": {"itemsPerPage": 5, "totalItems": <?= count($block->getItems()) ?>}}'>
+                    <img class="wishlist-pagination__icon" src="<?= $block->getViewFileUrl('Magento_Theme/images/icons/arrow.svg') ?>" alt="Show More" />
+                    <span class="wishlist-pagination__text">
+                        <?=$escaper->escapeHtml(__('Show more %1 items', min(count($block->getItems()) - 5, 5)))?>
+                    </span>
+                </button>
+            </div>
+    <?php endif; ?>
+    <?php else : ?>
+        <div class="message info empty">
+            <span><?= $escaper->escapeHtml(__('This Wish List has no Items')) ?></span>
+        </div>
+    <?php endif; ?>
+</div>
+
+<?php foreach ($columns as $column) : ?>
+    <?= $column->getAdditionalHtml() ?>
+<?php endforeach; ?>
+

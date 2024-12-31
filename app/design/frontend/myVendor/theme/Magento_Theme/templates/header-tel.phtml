@@ -1,0 +1,14 @@
+<?php
+/**
+* @var \Magento\Theme\Block\Html\Header $block
+* @var \Magento\Framework\Escaper $escaper
+*/
+?>
+
+<div class="header-tel__wrapper">
+    <a class="link-tel" href="tel:0800300144">
+        <img src="<?= $block->getViewFileUrl('Magento_Theme::images/icons/phone.svg') ?>" alt="tel" />
+        <?= $escaper->escapeHtml(__('0 800 300 144')) ?>
+    </a>
+</div>
+
